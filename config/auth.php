@@ -41,6 +41,11 @@ return [
             'provider' => 'users',
         ],
 
+        'evaluator' => [
+            'driver' => 'session',
+            'provider' => 'evaluators',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -71,6 +76,11 @@ return [
             'model' => App\User::class,
         ],
 
+        'evaluators' => [
+            'driver' => 'eloquent',
+            'model' => App\Evaluator::class,
+        ],
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -99,6 +109,13 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+
+        'evaluators' => [
+            'provider' => 'evaluators',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ]
     ],
 
     /*
